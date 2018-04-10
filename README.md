@@ -67,38 +67,58 @@ Aplicación que permite calcular el PIM (Indice de Mortalidad Pediatrico)
       * 200 - Ok
       * 400 - Bad Request
   * POST /api/pacientes/{idPaciente}/pims/{idPim}
-    * Descripción: Crear un nuevo paciente
+    * Descripción: Crear un PIM para un paciente determinado
     * BODY: 
     { 
-     "historiaClinica": 0,
-     "nombre": "string",
-     "apellido": "string",
-     "fechaNacimiento": "date",
-     "sexo": "string",
-     "ultimoPeso": "date",
-     "superficieCorporal": "string",
-     "fechaUltimoCambioUF": "date"
+      "diagnosticoMuyAltoRiesgo": 0,
+      "diagnosticoAltoRiesgo": 0,
+      "diagnosticoBajoRiesgo": 0,
+      "presionSistolica": 0,
+      "excesoDeBaseEnSangre": 0,
+      "fiO2": 0,
+      "paO2": 0,
+      "adminisionElectivaUci": 0,
+      "midriasisBilateral": 0,
+      "recuperacionPostQX": 0,
+      "recuperacionByPassCardiaco": 0,
+      "recuperacionProcCardSinByPassCardiaco": 0,
+      "recuperacionOtroProcedimientoNoCardiaco": 0,
+      "HIV": 0,
+      "transplateHepaticoDeDonanteVivo": 0,
+      "fechaCreacion": "date",
+      "codigoMedico": 0,
+      "usuario": "string"
     } 
     * Code: 
       * 200 - Ok
       * 400 - Bad Request 
-  * PUT /api/pacientes/{idPaciente}
+  * PUT /api/pacientes/{idPaciente}/pims/{idPim}
     * Descripción: Actualizar los datos de un paciente según su idPaciente
     * BODY: 
     { 
-     "historiaClinica": 0,
-     "nombre": "string",
-     "apellido": "string",
-     "fechaNacimiento": "date",
-     "sexo": "string",
-     "ultimoPeso": "date",
-     "superficieCorporal": "string",
-     "fechaUltimoCambioUF": "date"
+      "diagnosticoMuyAltoRiesgo": 0,
+      "diagnosticoAltoRiesgo": 0,
+      "diagnosticoBajoRiesgo": 0,
+      "presionSistolica": 0,
+      "excesoDeBaseEnSangre": 0,
+      "fiO2": 0,
+      "paO2": 0,
+      "adminisionElectivaUci": 0,
+      "midriasisBilateral": 0,
+      "recuperacionPostQX": 0,
+      "recuperacionByPassCardiaco": 0,
+      "recuperacionProcCardSinByPassCardiaco": 0,
+      "recuperacionOtroProcedimientoNoCardiaco": 0,
+      "HIV": 0,
+      "transplateHepaticoDeDonanteVivo": 0,
+      "fechaCreacion": "date",
+      "codigoMedico": 0,
+      "usuario": "string"
     } 
     * Code: 
       * 200 - Ok
       * 400 - Bad Request   
-  * DELETE /api/pacientes/{idPaciente}
+  * DELETE /api/pacientes/{idPaciente}/pims/{idPim}
     * Descripción: Borrar un paciente según su idPaciente
     * BODY: null 
     * Code: 
