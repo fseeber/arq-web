@@ -21,6 +21,12 @@ Aplicación que permite calcular el PIM (Indice de Mortalidad Pediatrico)
     * Code: 
       * 200 - Ok
       * 400 - Bad Request
+  * GET /api/pacientes?order={orden}
+    * Descripción: Obtener todos los pacientes 
+    * BODY: null
+    * Code: 
+      * 200 - Ok
+      * 400 - Bad Request      
   * POST /api/pacientes
     * Descripción: Crear un nuevo paciente
     * BODY:
@@ -72,6 +78,12 @@ Aplicación que permite calcular el PIM (Indice de Mortalidad Pediatrico)
     * Code: 
       * 200 - Ok
       * 400 - Bad Request
+  * GET /api/pacientes/{idPaciente}/pims?order={orden}
+    * Descripción: Obtener todos los PIM´s según su idPaciente
+    * BODY: null
+    * Code: 
+      * 200 - Ok
+      * 400 - Bad Request      
   * POST /api/pacientes/{idPaciente}/pims/{idPim}
     * Descripción: Crear un PIM para un paciente determinado
     * BODY: 
