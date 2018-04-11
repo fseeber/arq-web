@@ -23,7 +23,8 @@ Aplicación que permite calcular el PIM (Indice de Mortalidad Pediatrico)
       * 400 - Bad Request
   * POST /api/pacientes
     * Descripción: Crear un nuevo paciente
-    * BODY: 
+    * BODY:
+    ```javascript
     { 
      "historiaClinica": 0,
      "nombre": "string",
@@ -33,13 +34,15 @@ Aplicación que permite calcular el PIM (Indice de Mortalidad Pediatrico)
      "ultimoPeso": "date",
      "superficieCorporal": "string",
      "fechaUltimoCambioUF": "date"
-    } 
+    }
+    ```
     * Code: 
       * 200 - Ok
       * 400 - Bad Request 
   * PUT /api/pacientes/{idPaciente}
     * Descripción: Actualizar los datos de un paciente según su idPaciente
     * BODY: 
+    ```javascript
     { 
      "historiaClinica": 0,
      "nombre": "string",
@@ -49,7 +52,8 @@ Aplicación que permite calcular el PIM (Indice de Mortalidad Pediatrico)
      "ultimoPeso": "date",
      "superficieCorporal": "string",
      "fechaUltimoCambioUF": "date"
-    } 
+    }
+    ```
     * Code: 
       * 200 - Ok
       * 400 - Bad Request   
@@ -69,6 +73,7 @@ Aplicación que permite calcular el PIM (Indice de Mortalidad Pediatrico)
   * POST /api/pacientes/{idPaciente}/pims/{idPim}
     * Descripción: Crear un PIM para un paciente determinado
     * BODY: 
+    ```javascript
     { 
       "diagnosticoMuyAltoRiesgo": 0,
       "diagnosticoAltoRiesgo": 0,
@@ -88,13 +93,15 @@ Aplicación que permite calcular el PIM (Indice de Mortalidad Pediatrico)
       "fechaCreacion": "date",
       "codigoMedico": 0,
       "usuario": "string"
-    } 
+    }
+    ```
     * Code: 
       * 200 - Ok
       * 400 - Bad Request 
   * PUT /api/pacientes/{idPaciente}/pims/{idPim}
     * Descripción: Actualizar los datos de un paciente según su idPaciente
     * BODY: 
+    ```javascript
     { 
       "diagnosticoMuyAltoRiesgo": 0,
       "diagnosticoAltoRiesgo": 0,
@@ -114,7 +121,8 @@ Aplicación que permite calcular el PIM (Indice de Mortalidad Pediatrico)
       "fechaCreacion": "date",
       "codigoMedico": 0,
       "usuario": "string"
-    } 
+    }
+    ```
     * Code: 
       * 200 - Ok
       * 400 - Bad Request   
