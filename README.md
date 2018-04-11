@@ -63,6 +63,8 @@ Aplicación que permite calcular el PIM (Indice de Mortalidad Pediatrico)
     * Code: 
       * 200 - Ok
       * 400 - Bad Request 
+
+
 **PIM**    
   * GET /api/pacientes/{idPaciente}/pims/{idPim}
     * Descripción: Obtener un PIM según su idPaciente y su idPim
