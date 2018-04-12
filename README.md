@@ -112,6 +112,7 @@ Aplicación que permite calcular el PIM (Indice de Mortalidad Pediatrico)
     * Code: 
       * 200 - Ok
       * 400 - Bad Request 
+   
   * PUT /api/pacientes/{idPaciente}/pims/{idPim}
     * Descripción: Actualizar los datos de un paciente según su idPaciente
     * BODY: 
@@ -140,6 +141,34 @@ Aplicación que permite calcular el PIM (Indice de Mortalidad Pediatrico)
     * Code: 
       * 200 - Ok
       * 400 - Bad Request   
+* PUT /api/pacientes/{idPaciente}/pims/{idPim}/calcularPim
+    * Descripción: Actualizar el score del PIM para un paciente según su idPaciente
+    * BODY: 
+    ```javascript
+    { 
+      "diagnosticoMuyAltoRiesgo": 0,
+      "diagnosticoAltoRiesgo": 0,
+      "diagnosticoBajoRiesgo": 0,
+      "presionSistolica": 0,
+      "excesoDeBaseEnSangre": 0,
+      "fiO2": 0,
+      "paO2": 0,
+      "adminisionElectivaUci": 0,
+      "midriasisBilateral": 0,
+      "recuperacionPostQX": 0,
+      "recuperacionByPassCardiaco": 0,
+      "recuperacionProcCardSinByPassCardiaco": 0,
+      "recuperacionOtroProcedimientoNoCardiaco": 0,
+      "HIV": 0,
+      "transplateHepaticoDeDonanteVivo": 0,
+      "fechaCreacion": "date",
+      "codigoMedico": 0,
+      "usuario": "string"
+    }
+    ```
+    * Code: 
+      * 200 - Ok
+      * 400 - Bad Request         
   * DELETE /api/pacientes/{idPaciente}/pims/{idPim}
     * Descripción: Borrar un paciente según su idPaciente
     * BODY: null 
