@@ -21,12 +21,14 @@ Aplicación que permite calcular el PIM (Indice de Mortalidad Pediatrico)
     * Code: 
       * 200 - Ok
       * 400 - Bad Request
+      * 500 - Internal Server Error
   * GET /api/pacientes?order={orden}
     * Descripción: Obtener todos los pacientes 
     * BODY: null
     * Code: 
       * 200 - Ok
-      * 400 - Bad Request      
+      * 400 - Bad Request
+      * 500 - Internal Server Error      
   * POST /api/pacientes
     * Descripción: Crear un nuevo paciente
     * BODY:
@@ -45,6 +47,7 @@ Aplicación que permite calcular el PIM (Indice de Mortalidad Pediatrico)
     * Code: 
       * 200 - Ok
       * 400 - Bad Request 
+      * 500 - Internal Server Error      
   * PUT /api/pacientes/{idPaciente}
     * Descripción: Actualizar los datos de un paciente según su idPaciente
     * BODY: 
@@ -63,13 +66,15 @@ Aplicación que permite calcular el PIM (Indice de Mortalidad Pediatrico)
     * Code: 
       * 200 - Ok
       * 400 - Bad Request   
+      * 500 - Internal Server Error      
   * DELETE /api/pacientes/{idPaciente}
     * Descripción: Borrar un paciente según su idPaciente
     * BODY: null 
     * Code: 
       * 200 - Ok
       * 400 - Bad Request 
-
+      * 500 - Internal Server Error
+      
 
 **PIM**    
   * GET /api/pacientes/{idPaciente}/pims/{idPim}
@@ -78,12 +83,14 @@ Aplicación que permite calcular el PIM (Indice de Mortalidad Pediatrico)
     * Code: 
       * 200 - Ok
       * 400 - Bad Request
+      * 500 - Internal Server Error      
   * GET /api/pacientes/{idPaciente}/pims?order={orden}
     * Descripción: Obtener todos los PIM´s según su idPaciente
     * BODY: null
     * Code: 
       * 200 - Ok
-      * 400 - Bad Request      
+      * 400 - Bad Request  
+      * 500 - Internal Server Error      
   * POST /api/pacientes/{idPaciente}/pims/{idPim}
     * Descripción: Crear un PIM para un paciente determinado
     * BODY: 
@@ -112,7 +119,7 @@ Aplicación que permite calcular el PIM (Indice de Mortalidad Pediatrico)
     * Code: 
       * 200 - Ok
       * 400 - Bad Request 
-   
+      * 500 - Internal Server Error   
   * PUT /api/pacientes/{idPaciente}/pims/{idPim}
     * Descripción: Actualizar los datos de un paciente según su idPaciente
     * BODY: 
@@ -140,7 +147,8 @@ Aplicación que permite calcular el PIM (Indice de Mortalidad Pediatrico)
     ```
     * Code: 
       * 200 - Ok
-      * 400 - Bad Request   
+      * 400 - Bad Request  
+      * 500 - Internal Server Error      
 * PUT /api/pacientes/{idPaciente}/pims/{idPim}/calcularPim
     * Descripción: Actualizar el score del PIM para un paciente según su idPaciente
     * BODY: 
@@ -169,6 +177,7 @@ Aplicación que permite calcular el PIM (Indice de Mortalidad Pediatrico)
     * Code: 
       * 200 - Ok
       * 400 - Bad Request
+      * 500 - Internal Server Error      
 * PUT /api/pacientes/{idPaciente}/pims/{idPim}/invalidarPim
     * Descripción: Invalidar el PIM según su idPim. Estado= 'I'
     * BODY: 
@@ -180,6 +189,7 @@ Aplicación que permite calcular el PIM (Indice de Mortalidad Pediatrico)
     * Code: 
       * 200 - Ok
       * 400 - Bad Request
+      * 500 - Internal Server Error      
       
       
 * DELETE /api/pacientes/{idPaciente}/pims/{idPim}
@@ -188,3 +198,4 @@ Aplicación que permite calcular el PIM (Indice de Mortalidad Pediatrico)
     * Code: 
       * 200 - Ok
       * 400 - Bad Request   
+      * 500 - Internal Server Error      
