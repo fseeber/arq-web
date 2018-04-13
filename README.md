@@ -179,7 +179,9 @@ Aplicación que permite calcular el PIM (Indice de Mortalidad Pediatrico)
     ```
     * Code: 
       * 200 - Ok
-      * 400 - Bad Request         
+      * 400 - Bad Request
+      
+      
   * DELETE /api/pacientes/{idPaciente}/pims/{idPim}
     * Descripción: Borrar un paciente según su idPaciente
     * BODY: null 
