@@ -168,6 +168,17 @@ Aplicación que permite calcular el PIM (Indice de Mortalidad Pediatrico)
     ```
     * Code: 
       * 200 - Ok
+      * 400 - Bad Request
+* PUT /api/pacientes/{idPaciente}/pims/{idPim}/invalidarPim
+    * Descripción: Invalidar el PIM según su idPim. Estado= 'I'
+    * BODY: 
+    ```javascript
+    { 
+      "estado": "I"
+    }
+    ```
+    * Code: 
+      * 200 - Ok
       * 400 - Bad Request         
   * DELETE /api/pacientes/{idPaciente}/pims/{idPim}
     * Descripción: Borrar un paciente según su idPaciente
