@@ -15,19 +15,20 @@ Aplicación que permite calcular el PIM (Indice de Mortalidad Pediatrico)
 * Postman 10 
 ## EndPoints de la API:
 **Pacientes**  
-  * GET /api/pacientes/{idPaciente}
-    * Descripción: Obtener un paciente según su idPaciente
+  * GET /api/pacientes/{historiaClinica}
+    * Descripción: Obtener un paciente según su historiaClinica
     * BODY: null
     * Code: 
       * 200 - Ok
       * 400 - Bad Request
-      * 500 - Internal Server Error
-  * GET /api/pacientes?order={orden}
+      * 404 - Not Found
+  * GET /api/pacientes?orderBy={orden}
     * Descripción: Obtener todos los pacientes 
     * BODY: null
     * Code: 
       * 200 - Ok
       * 400 - Bad Request
+      * 404 - Not Found
       * 500 - Internal Server Error      
   * POST /api/pacientes
     * Descripción: Crear un nuevo paciente
@@ -78,13 +79,13 @@ Aplicación que permite calcular el PIM (Indice de Mortalidad Pediatrico)
 
 **PIM**    
   * GET /api/pacientes/{idPaciente}/pims/{idPim}
-    * Descripción: Obtener un PIM según su idPaciente y su idPim
+    * Descripción: Obtener un PIM según su idPaciente y su idPim. En caso de que este desactualizado el score se volvera a recalcular.
     * BODY: null
     * Code: 
       * 200 - Ok
       * 400 - Bad Request
       * 500 - Internal Server Error      
-  * GET /api/pacientes/{idPaciente}/pims?order={orden}
+  * GET /api/pacientes/{idPaciente}/pims?orderBy={orden}
     * Descripción: Obtener todos los PIM´s según su idPaciente
     * BODY: null
     * Code: 
@@ -121,7 +122,7 @@ Aplicación que permite calcular el PIM (Indice de Mortalidad Pediatrico)
       * 400 - Bad Request 
       * 500 - Internal Server Error   
   * PUT /api/pacientes/{idPaciente}/pims/{idPim}
-    * Descripción: Actualizar los datos de un paciente según su idPaciente
+    * Descripción: Actualizar los datos del PIM, según su {idPim} y {idPaciente}
     * BODY: 
     ```javascript
     { 
@@ -142,55 +143,15 @@ Aplicación que permite calcular el PIM (Indice de Mortalidad Pediatrico)
       "transplateHepaticoDeDonanteVivo": 0,
       "fechaCreacion": "date",
       "codigoMedico": 0,
-      "usuario": "string"
+      "usuario": "string",
+      "estado": "string"
     }
     ```
     * Code: 
       * 200 - Ok
       * 400 - Bad Request  
       * 500 - Internal Server Error      
-* PUT /api/pacientes/{idPaciente}/pims/{idPim}/calcularPim
-    * Descripción: Actualizar el score del PIM para un paciente según su idPaciente
-    * BODY: 
-    ```javascript
-    { 
-      "diagnosticoMuyAltoRiesgo": 0,
-      "diagnosticoAltoRiesgo": 0,
-      "diagnosticoBajoRiesgo": 0,
-      "presionSistolica": 0,
-      "excesoDeBaseEnSangre": 0,
-      "fiO2": 0,
-      "paO2": 0,
-      "adminisionElectivaUci": 0,
-      "midriasisBilateral": 0,
-      "recuperacionPostQX": 0,
-      "recuperacionByPassCardiaco": 0,
-      "recuperacionProcCardSinByPassCardiaco": 0,
-      "recuperacionOtroProcedimientoNoCardiaco": 0,
-      "HIV": 0,
-      "transplateHepaticoDeDonanteVivo": 0,
-      "fechaCreacion": "date",
-      "codigoMedico": 0,
-      "usuario": "string"
-    }
-    ```
-    * Code: 
-      * 200 - Ok
-      * 400 - Bad Request
-      * 500 - Internal Server Error      
-* PUT /api/pacientes/{idPaciente}/pims/{idPim}/invalidarPim
-    * Descripción: Invalidar el PIM según su idPim. Estado= 'I'
-    * BODY: 
-    ```javascript
-    { 
-      "estado": "I"
-    }
-    ```
-    * Code: 
-      * 200 - Ok
-      * 400 - Bad Request
-      * 500 - Internal Server Error      
-      
+  
       
 * DELETE /api/pacientes/{idPaciente}/pims/{idPim}
     * Descripción: Borrar un paciente según su idPaciente
