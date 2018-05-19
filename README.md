@@ -1,4 +1,4 @@
-## Trabajo Práctico 
+## Trabajo Práctico
 Arquitectura Web
 ## Integrante
 Federico Seeber
