@@ -1,0 +1,19 @@
+# Windows thumbnail cache files
+
+Thumbs.db
+ehthumbs.db
+ehthumbs_vista.db
+
+# others
+
+app/bower_components/*
+!.gitkeep
+node_modules/
+app/server.js
+tmp
+.DS_Store
+.idea
+.project
+.metadata
+.settings/
+npm-debug.log

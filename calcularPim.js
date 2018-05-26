@@ -47,7 +47,7 @@ probMuerte: 0
         fio2_pao2 = pim.fio2 / pim.pao2;
     }
     
-    pim3 =
+    scorePim =
         ((pim.adminisionElectivaUci * -0.5378)
            + (pim.midriasisBilateral * 3.8233)
            + (pim.asistenciaRespiracionMecanica * 0.9763)
