@@ -1,0 +1,229 @@
+<div class="page-title">
+
+	<div class="title-env">
+		<h1 class="title">Alta de Pim</h1>
+		<p class="description">Para dar de alta un PIM debe completar los siguientes campos</p>
+	</div>
+
+	<div class="breadcrumb-env">
+		<ol class="breadcrumb bc-1">
+			<li><a href="#home"><i class="fa-home"></i>Home</a></li>
+		</ol>
+	</div>
+
+</div>
+<div ng-controller="AddPimCtrl">
+
+	<form role="form" class="form-horizontal" name="userForm" ng-submit="save()">
+		<div class="row">
+			<div class="col-sm-12">
+				<div class="panel panel-default">
+					<div class="panel-heading">
+						<h3 class="panel-title">JSON a enviar..: {{paciente}}</h3>
+					</div>
+					
+					
+					
+					<div class="panel-body">
+					
+						<div class="form-group has-feedback">
+							<label class="col-sm-2 control-label" for="HC">Diagnostico Muy Alto Riesgo</label>
+							<div class="col-sm-3">
+								<input type="number" name="diagnosticoMuyAltoRiesgo" id="diagnosticoMuyAltoRiesgo"
+									   ng-model="paciente.pim.diagnosticoMuyAltoRiesgo"
+									   ng-required="true"
+									   ng-trim="false">
+									<span class="glyphicon glyphicon-warning-sign form-control-feedback"></span>
+							</div>
+						</div>
+						<br />
+
+						<div class="form-group has-feedback">
+							<label class="col-sm-2 control-label" for="HC">Diagnostico Alto Riesgo</label>
+							<div class="col-sm-3">
+								<input type="number" name="diagnosticoAltoRiesgo" id="diagnosticoAltoRiesgo"
+									   ng-model="paciente.pim.diagnosticoAltoRiesgo"
+									   ng-required="true"
+									   ng-trim="false">
+									<span class="glyphicon glyphicon-warning-sign form-control-feedback"></span>
+							</div>
+						</div>
+						<br />
+
+						<div class="form-group has-feedback">
+							<label class="col-sm-2 control-label" for="HC">Diagnostico Bajo Riesgo</label>
+							<div class="col-sm-3">
+								<input type="number" name="diagnosticoBajoRiesgo" id="diagnosticoBajoRiesgo"
+									   ng-model="paciente.pim.diagnosticoBajoRiesgo"
+									   ng-required="true"
+									   ng-trim="false">
+									<span class="glyphicon glyphicon-warning-sign form-control-feedback"></span>
+							</div>
+						</div>
+						<br />
+
+						<div class="form-group has-feedback">
+							<label class="col-sm-2 control-label" for="HC">Presion Sistolica</label>
+							<div class="col-sm-3">
+								<input type="number" name="presionSistolica" id="presionSistolica"
+									   ng-model="paciente.pim.presionSistolica"
+									   ng-required="true"
+									   ng-trim="false">
+									<span class="glyphicon glyphicon-warning-sign form-control-feedback"></span>
+							</div>
+						</div>
+						<br />
+						<div class="form-group has-feedback">
+							<label class="col-sm-2 control-label" for="HC">Exceso de Base en Sangre</label>
+							<div class="col-sm-3">
+								<input type="number" name="excesoDeBaseEnSangre" id="excesoDeBaseEnSangre"
+									   ng-model="paciente.pim.excesoDeBaseEnSangre"
+									   ng-required="true"
+									   ng-trim="false">
+									<span class="glyphicon glyphicon-warning-sign form-control-feedback"></span>
+							</div>
+						</div>
+						<br />
+						<div class="form-group has-feedback">
+							<label class="col-sm-2 control-label" for="HC">fiO2</label>
+							<div class="col-sm-3">
+								<input type="number" name="fiO2" id="fiO2"
+									   ng-model="paciente.pim.fiO2"
+									   ng-required="true"
+									   ng-trim="false">
+									<span class="glyphicon glyphicon-warning-sign form-control-feedback"></span>
+							</div>
+						</div>
+						<br />
+						<div class="form-group has-feedback">
+							<label class="col-sm-2 control-label" for="HC">paO2</label>
+							<div class="col-sm-3">
+								<input type="number" name="paO2" id="paO2"
+									   ng-model="paciente.pim.paO2"
+									   ng-required="true"
+									   ng-trim="false">
+									<span class="glyphicon glyphicon-warning-sign form-control-feedback"></span>
+							</div>
+						</div>
+						<br />
+						<div class="form-group has-feedback">
+							<label class="col-sm-2 control-label" for="HC">Adminision Electiva Uci</label>
+							<div class="col-sm-3">
+								<input type="number" name="adminisionElectivaUci" id="adminisionElectivaUci"
+									   ng-model="paciente.pim.adminisionElectivaUci"
+									   ng-required="true"
+									   ng-trim="false">
+									<span class="glyphicon glyphicon-warning-sign form-control-feedback"></span>
+							</div>
+						</div>
+						<br />
+						<div class="form-group has-feedback">
+							<label class="col-sm-2 control-label" for="HC">Midriasis Bilateral</label>
+							<div class="col-sm-3">
+								<input type="number" name="midriasisBilateral" id="midriasisBilateral"
+									   ng-model="paciente.pim.midriasisBilateral"
+									   ng-required="true"
+									   ng-trim="false">
+									<span class="glyphicon glyphicon-warning-sign form-control-feedback"></span>
+							</div>
+						</div>
+						<br />
+						<div class="form-group has-feedback">
+							<label class="col-sm-2 control-label" for="HC">Asistencia Respiracion Mecanica</label>
+							<div class="col-sm-3">
+								<input type="number" name="asistenciaRespiracionMecanica" id="asistenciaRespiracionMecanica"
+									   ng-model="paciente.pim.asistenciaRespiracionMecanica"
+									   ng-required="true"
+									   ng-trim="false">
+									<span class="glyphicon glyphicon-warning-sign form-control-feedback"></span>
+							</div>
+						</div>
+						<br />
+						<div class="form-group has-feedback">
+							<label class="col-sm-2 control-label" for="HC">Recuperacion Post QX</label>
+							<div class="col-sm-3">
+								<input type="number" name="recuperacionPostQX" id="recuperacionPostQX"
+									   ng-model="paciente.pim.diagnosticrecuperacionPostQXoBajoRiesgo"
+									   ng-required="true"
+									   ng-trim="false">
+									<span class="glyphicon glyphicon-warning-sign form-control-feedback"></span>
+							</div>
+						</div>
+						<br />
+						<div class="form-group has-feedback">
+							<label class="col-sm-2 control-label" for="HC">Recuperacion By Pass Cardiaco</label>
+							<div class="col-sm-3">
+								<input type="number" name="recuperacionByPassCardiaco" id="recuperacionByPassCardiaco"
+									   ng-model="paciente.pim.recuperacionByPassCardiaco"
+									   ng-required="true"
+									   ng-trim="false">
+									<span class="glyphicon glyphicon-warning-sign form-control-feedback"></span>
+							</div>
+						</div>
+						<br />
+						<div class="form-group has-feedback">
+							<label class="col-sm-2 control-label" for="HC">Recuperacion Proc Card Sin ByPass Cardiaco</label>
+							<div class="col-sm-3">
+								<input type="number" name="recuperacionProcCardSinByPassCardiaco" id="recuperacionProcCardSinByPassCardiaco"
+									   ng-model="paciente.pim.recuperacionProcCardSinByPassCardiaco"
+									   ng-required="true"
+									   ng-trim="false">
+									<span class="glyphicon glyphicon-warning-sign form-control-feedback"></span>
+							</div>
+						</div>
+						<br />
+						<div class="form-group has-feedback">
+							<label class="col-sm-2 control-label" for="HC">Recuperacion Otro Procedimiento NoCardiaco</label>
+							<div class="col-sm-3">
+								<input type="number" name="recuperacionOtroProcedimientoNoCardiaco" id="recuperacionOtroProcedimientoNoCardiaco"
+									   ng-model="paciente.pim.recuperacionOtroProcedimientoNoCardiaco"
+									   ng-required="true"
+									   ng-trim="false">
+									<span class="glyphicon glyphicon-warning-sign form-control-feedback"></span>
+							</div>
+						</div>
+						<br />
+						<div class="form-group has-feedback">
+							<label class="col-sm-2 control-label" for="HC">txHIV</label>
+							<div class="col-sm-3">
+								<input type="number" name="txHIV" id="txHIV"
+									   ng-model="paciente.pim.txHIV"
+									   ng-required="true"
+									   ng-trim="false">
+									<span class="glyphicon glyphicon-warning-sign form-control-feedback"></span>
+							</div>
+						</div>
+						<br />
+						<div class="form-group has-feedback">
+							<label class="col-sm-2 control-label" for="HC">HIV</label>
+							<div class="col-sm-3">
+								<input type="number" name="HIV" id="HIV"
+									   ng-model="paciente.pim.HIV"
+									   ng-required="true"
+									   ng-trim="false">
+									<span class="glyphicon glyphicon-warning-sign form-control-feedback"></span>
+							</div>
+						</div>
+						<br />
+						<div class="form-group has-feedback">
+							<label class="col-sm-2 control-label" for="HC">Transplate Hepatico De Donante Vivo</label>
+							<div class="col-sm-3">
+								<input type="number" name="transplateHepaticoDeDonanteVivo" id="transplateHepaticoDeDonanteVivo"
+									   ng-model="paciente.pim.transplateHepaticoDeDonanteVivo"
+									   ng-required="true"
+									   ng-trim="false">
+									<span class="glyphicon glyphicon-warning-sign form-control-feedback"></span>
+							</div>
+						</div>
+						<br />
+
+						<button type="button" class="btn btn-danger" ng-click="back()">Volver</button>
+						<button type="submit" class="btn btn-blue" ng-disabled="!userForm.$valid">Guardar</button>
+						
+					</div>
+				</div>
+			</div>
+		</div>
+	</form>
+
+</div>

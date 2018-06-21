@@ -1,0 +1,129 @@
+<div class="page-title">
+
+	<div class="title-env">
+		<h3 class="title">Lista de Pacientes</h3>
+		<p class="description">Aquí podrá buscar, editar y dar de baja y alta pacientes existentes.</p>
+	</div>
+
+	<div class="breadcrumb-env">
+		<ol class="breadcrumb bc-1">
+			<li><a href="#home"><i class="fa-home"></i>Home</a></li>
+		</ol>
+	</div>
+
+</div>
+
+<div ng-controller="PacienteListCtrl">
+	<form role="form" class="form-horizontal" name="exampleListForm">
+
+		<div class="row">
+			<div class="col-sm-12">
+				<div class="panel panel-default">
+					<div class="panel-body">
+						<div class="form-group has-feedback">
+							<!--<div class="panel-heading">
+								<h3 class="panel-title">JSON a enviar..: {{pacientes}}</h3>
+							</div>-->
+							<label class="col-sm-2 control-label" for="id">Id Paciente</label>
+							<div class="col-sm-3">
+								<input type="text" class="form-control" id="_id" ng-model="paciente._id" name="id" >
+								<span class="glyphicon glyphicon-warning-sign form-control-feedback"></span>
+							</div>
+						</div>
+
+						<div class="form-group" style="text-align: right;">
+							<button type="button" class="btn btn-info"
+									style="border-radius: 3px;"
+									ng-click="search()">Buscar</button>
+							<button type="button" class="btn btn-danger"
+									style="border-radius: 3px;"
+									ng-click="clear()">Limpiar</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		
+	</form>
+	<div class="row">
+		<div class="col-sm-12">
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<h3 class="panel-title">Pacientes </h3>
+				</div>
+				<div class="panel-body">
+					<div class="col-sm-12" style="overflow: auto;">
+						<!-- Combined Table -->
+						<table class="table table-bordered table-striped" >
+							<thead>
+							<tr>
+								<th>ID</th>
+								<th>Historia Clínica</th>
+								<th></th>
+								<th></th>
+								<th></th>
+							</tr>
+							</thead>
+							<tbody ng-repeat="paciente in pacientes.pacientes">
+								<tr >			
+									<td>{{paciente._id}}</td>
+									<td>{{paciente.historiaClinica}}</td>
+									<td style="text-align: center;">
+										<a class="btn btn-secondary btn-sm btn-icon" ng-href="#/edit_paciente/{{paciente._id}}">Editar</a>
+									</td>
+									<td style="text-align: center;">
+										<a class="btn btn-danger btn-sm btn-icon" ng-click="deletePaciente(paciente._id)">Borrar</a>
+									</td>
+									<td style="text-align: center;">
+										<a class="btn btn-seconday btn-sm btn-icon" ng-href="#/add_pim/{{paciente._id}}">Cargar PIM</a>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>	
+
+
+	<div class="row">
+		<div class="col-sm-12">
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<h3 class="panel-title">Pims {{}}</h3>
+				</div>
+				<div class="panel-body">
+					<div class="col-sm-12" style="overflow: auto;">
+						<!-- Combined Table -->
+						<table class="table table-bordered table-striped" >
+							<thead>
+							<tr>
+								<th>Id PIM</th>
+								<th>Id Paciente</th>
+								<th>Pim</th>
+								<th></th>
+								<th></th>
+							</tr>
+							</thead>
+							<tbody>
+								<tr ng-repeat="pim in pims.pims" ng-if="pim.paciente === paciente._id || !paciente._id">
+									<td>{{pim._id}}</td>
+									<td>{{pim.paciente}}</td>
+									<td>{{pim.pim | number:2}}</td>
+									<td style="text-align: center;">
+										<a class="btn btn-secondary btn-sm btn-icon" ng-href="#/edit_pim/{{pim.paciente}}">Editar</a>
+									</td>
+									<td style="text-align: center;">
+										<a class="btn btn-danger btn-sm btn-icon" ng-click="deletePim(pim.paciente)">Borrar</a>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>	
+</div>

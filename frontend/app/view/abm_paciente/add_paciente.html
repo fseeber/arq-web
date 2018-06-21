@@ -1,0 +1,103 @@
+<div class="page-title">
+
+	<div class="title-env">
+		<h1 class="title">	Paciente</h1>
+		<p class="description">Para dar de alta un nuevo paciente debe completar los siguientes campos</p>
+	</div>
+
+	<div class="breadcrumb-env">
+		<ol class="breadcrumb bc-1">
+			<li><a href="#home"><i class="fa-home"></i>Home</a></li>
+		</ol>
+	</div>
+
+</div>
+<div ng-controller="AddPacienteCtrl">
+
+	<form role="form" class="form-horizontal" name="userForm" ng-submit="save()">
+		<div class="row">
+			<div class="col-sm-12">
+				<div class="panel panel-default">
+					<div class="panel-heading">
+						<h3 class="panel-title">JSON a enviar..: {{paciente}}</h3>
+					</div>
+					
+					
+					
+					<div class="panel-body">
+					
+						<div class="form-group has-feedback">
+							<label class="col-sm-2 control-label" for="HC">Historia Clínica</label>
+							<div class="col-sm-3">
+								<input type="text" name="historiaClinica" id="historiaClinica"
+									   ng-model="paciente.historiaClinica"
+									   ng-required="true"
+									   ng-pattern="generalPattern"
+									   ng-trim="false">
+									<span class="glyphicon glyphicon-warning-sign form-control-feedback"></span>
+							</div>
+						</div>
+						<br />
+
+						<div class="form-group has-feedback">
+							<label class="col-sm-2 control-label" for="HC">Nombre</label>
+							<div class="col-sm-3">
+								<input type="text" name="nombre" id="nombre"
+									   ng-model="paciente.nombre"
+									   ng-required="true"
+									   ng-pattern="generalPattern"
+									   ng-trim="false">
+									<span class="glyphicon glyphicon-warning-sign form-control-feedback"></span>
+							</div>
+						</div>
+						<br />
+
+						<div class="form-group has-feedback">
+							<label class="col-sm-2 control-label" for="Apellido">Apellido</label>
+							<div class="col-sm-3">
+								<input type="text" name="apellido" id="apellido"
+									   ng-model="paciente.apellido"
+									   ng-required="true"
+									   ng-pattern="generalPattern"
+									   ng-trim="false">
+									<span class="glyphicon glyphicon-warning-sign form-control-feedback"></span>
+							</div>
+						</div>
+						<br />
+
+						<div class="form-group has-feedback">
+							<label class="col-sm-2 control-label" for="Fecha de Nacimiento">Fecha de Nacimiento</label>
+							<div class="col-sm-3">
+								<input type="text" datetime="yyyy-MM-dd" name="fechaNacimiento" id="fechaNacimiento"
+									   ng-model="paciente.fechaNacimiento"
+									   ng-required="true"
+									   ng-pattern="generalPattern"
+									   ng-trim="false">
+									<span class="glyphicon glyphicon-warning-sign form-control-feedback"></span>
+							</div>
+						</div>
+						<br />
+
+						<div class="form-group has-feedback">
+							<label class="col-sm-2 control-label" for="Sexo">Sexo</label>
+							<div class="col-sm-3">
+								<select type="text" name="sexo" ng-model="paciente.sexo">
+									<option value="Masculino">Masculino</option>
+									<option value="Feminino">Femenino</option>
+									<option value="indefinido">indefinido</option>
+									<span class="glyphicon glyphicon-warning-sign form-control-feedback"></span>
+								</select>
+							</div>
+						</div>
+						<br />
+
+						<button type="button" class="btn btn-danger" ng-click="back()">Volver</button>
+						<button type="submit" class="btn btn-blue" ng-disabled="!userForm.$valid">Guardar</button>
+						
+					</div>
+				</div>
+			</div>
+		</div>
+	</form>
+
+</div>

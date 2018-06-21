@@ -1,0 +1,112 @@
+<div ng-controller="IndexCtrl">
+    <div class="page-container">
+        <div class="sidebar-menu toggle-others fixed">
+            <div class="sidebar-menu-inner">
+                <header class="logo-env">
+                    <div class="logo" >
+                        <a href="#" class="logo-expanded">
+                            <img src="../../img/logo_CeSim_trans.png" width="100px" alt="" />
+                        </a>
+
+                        <a href="#" class="logo-collapsed">
+                            <img src="../../img/logo_CeSim_trans.png" width="40px" alt="" />
+                        </a>
+                    </div>
+                    <div class="mobile-menu-toggle visible-xs">
+
+                        <a href="#" data-toggle="mobile-menu">
+                            <i class="fa-bars"></i>
+                        </a>
+                    </div>
+                </header>
+                <ul id="main-menu" class="main-menu">
+                    <li >
+                        <a href="home.html">
+                            <i class="fa-group"></i>
+                            <span class="title">Pacientes</span>
+                        </a>
+                        <ul>
+                            <li>
+                                <a href="#/add_paciente">
+                                    <i class="fa-group"></i>
+                                    <span class="title">Alta de Paciente</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#/paciente_list">
+                                    <i class="fa-search"></i>
+                                    <span class="title">Lista de Pacientes</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <li >
+                        <a href="dashboard-2.html">
+                            <i class="fa-group"></i>
+                            <span class="title">Pims</span>
+                        </a>
+                        <ul>
+                            <li>
+                                <a href="#/add_pim">
+                                    <i class="fa-group"></i>
+                                    <span class="title">Alta de Pim</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#/pim_list">
+                                    <i class="fa-search"></i>
+                                    <span class="title">Lista de Pims</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+
+        <div class="main-content">
+            <nav class="navbar user-info-navbar"  role="navigation" >
+                <ul class="user-info-menu left-links list-inline list-unstyled">
+                    <li class="hidden-sm hidden-xs">
+                        <a href="#" data-toggle="sidebar">
+                            <i class="fa-bars"></i>
+                        </a>
+                    </li>
+                </ul>
+                <ul class="user-info-menu right-links list-inline list-unstyled">
+                    <li class="hidden-sm hidden-xs">
+                        <a>
+                            <img src="../../img/users/avatar.png" alt="user-image" class="img-circle img-inline userpic-32" width="28" />
+                            <span>
+								{{logUser}}
+							</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="user-profile-menu list-unstyled" href="/" ng-click="logout()" style="margin-top: 5px;">
+                            <i class="fa-lock"></i>
+                            Logout
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+            <div id="view" ng-view style="min-height: 100vh;"></div>
+            <footer id="no-footer" class="main-footer sticky ">
+            </footer>
+        </div>
+    </div>
+</div>
+<!-- Bottom Scripts -->
+<script src="../../plugins/js/bootstrap.min.js"></script>
+<script src="../../plugins/js/TweenMax.min.js"></script>
+<script src="../../plugins/js/resizeable.js"></script>
+<script src="../../plugins/js/joinable.js"></script>
+<script src="../../plugins/js/xenon-api.js"></script>
+<script src="../../plugins/js/xenon-toggles.js"></script>
+<script src="../../plugins/js/toastr/toastr.min.js"></script>
+<script src="../../plugins/js/jquery-ui/jquery-ui.min.js"></script>
+<script src="../../plugins/js/knob/jquery.knob.min.js"></script>
+<script src="../../plugins/js/inputmask/jquery.inputmask.bundle.js"></script>
+<script src="../../plugins/js/xenon-custom.js"></script>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html lang="en" ng-app="app" class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html lang="en" ng-app="app" class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html lang="en" ng-app="app" class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html lang="en" ng-app="app" class="no-js"> <!--<![endif]-->
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta name="description" content="Garrahan Admin" />
+	<meta name="author" content="OpenDev Solutions" />
+
+	<title>Garrahan Admin</title>
+	
+	<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Arimo:400,700,400italic">
+	<link rel="stylesheet" href="plugins/css/fonts/linecons/css/linecons.css">
+	<link rel="stylesheet" href="plugins/css/fonts/fontawesome/css/font-awesome.min.css">
+	<link rel="stylesheet" href="plugins/css/bootstrap.css">
+	<link rel="stylesheet" href="plugins/css/xenon-core.css">
+	<link rel="stylesheet" href="plugins/css/xenon-forms.css">
+	<link rel="stylesheet" href="plugins/css/xenon-components.css">
+	<link rel="stylesheet" href="plugins/css/xenon-skins.css">
+	<link rel="stylesheet" href="plugins/js/multiselect/css/multi-select.css">
+	<link rel="stylesheet" href="plugins/js/select2/select2.css">
+	<link rel="stylesheet" href="plugins/js/select2/select2-bootstrap.css">
+	<link rel="stylesheet" href="plugins/js/datatables/dataTables.bootstrap.css">
+	<link rel="stylesheet" href="plugins/js/jquery-ui/jquery-ui.min.css">
+	<link rel="stylesheet" href="plugins/js/icheck/skins/all.css">
+	<link rel="stylesheet" href="css/validator.css">
+	<link rel="stylesheet" href="css/style.css">
+
+	<style type="text/css">
+		#no-footer{
+			padding: 0 30px;
+		}
+	</style>
+
+	<script src="plugins/js/jquery-1.11.1.min.js"></script>
+	<script src="plugins/js/bootstrap.min.js"></script>
+	<script src="plugins/js/select2/select2.min.js"></script>
+	<script src="plugins/js/multiselect/js/jquery.multi-select.js"></script>
+	<script src="plugins/js/icheck/icheck.min.js"></script>
+	<script src="plugins/js/resizeable.js"></script>
+	<script src="plugins/js/xenon-custom.js"></script>
+	<script src="plugins/js/datepicker/bootstrap-datepicker.js"></script>
+
+	<script src="bower_components/angular/angular.js"></script>
+	<script src="bower_components/angular-route/angular-route.js"></script>
+	<script src="bower_components/angular-resource/angular-resource.js"></script>
+	<!-- <script src="bower_components/angular-jwt/dist/angular-jwt.js"></script> -->
+	<script src="js/date_mask.js"></script>
+
+  </head>
+  <body>
+  	
+	<div id="loginStatus" class="unlogged"></div>
+
+	<!-- APP -->
+	<script src="app.js"></script>
+
+	<!-- SERVICES -->
+	<script src="components/services/AuthenticatorService.js"></script>
+	<script src="components/services/PacienteService.js"></script>
+	<script src="components/services/PimService.js"></script>
+
+	<!-- FACTORIES -->
+	<script src="components/factory/services.js"></script>
+	<script src="components/factory/directives.js"></script>
+
+	<!-- LOGIN -->
+	<script src="view/adminIndex/adminIndex.js"></script>
+	<script src="view/home/home.js"></script>
+
+	<!-- ABM VIEWS -->
+	<script src="view/abm_paciente/add_paciente.js"></script>
+	<script src="view/abm_paciente/paciente_list.js"></script>
+
+	<script src="view/abm_pim/add_pim.js"></script>
+	<script src="view/abm_pim/pim_list.js"></script>
+	
+  </body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Loggin Admin</title>
+        <meta name="description" content="">
+        <meta name="keywords" content="">
+        <meta charset="utf-8">
+        <meta name="author" content="OpenDev Solutions">
+        <!--[if IE]><meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'><![endif]-->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+        <link rel="stylesheet" href="../../bower_components/bootstrap/dist/css/bootstrap.min.css">
+        <link rel="stylesheet" href="../../css/style.css">
+    </head>
+    <body class="appear-animate">
+
+        <div class="page" id="top" ng-controller="IndexCtrl">
+            <section class="home-section" data-background="../../img/OP-DEV.jpg" id="home">
+                <div class="js-height-full">
+                    <div class="home-content container loginText">
+                        <div class="home-text">
+                            <div class="container hs-cont">
+                                <div class="hs-wrap animate-init loginDivBackground" data-anim-type="fade-in" data-anim-delay="100"
+                                     style="padding-top: 5%; padding-bottom: 5%; border-radius: 10px">
+                                    <form name="loginForm" class="form-horizontal" role="form" ng-submit="login()">
+                                        <div class="form-group" >
+                                            <img src="../../img/logo_CeSim_trans.png" width="30%" alt=""/>
+                                        </div>
+                                        <div class="form-group has-feedback " >
+                                            <label for="userName" class="col-sm-3 control-label ">Usuario</label>
+                                            <div class="col-sm-7">
+                                                <input name="userName" type="text" class="form-control" id="userName" placeholder="Ingrese el nombre del usuario" ng-model="user.name   " required autofocus maxlength="20" ng-pattern="inputLogginPattern" ngTrim="true">
+                                            </div>
+                                        </div>
+                                        <div class="form-group has-feedback" >
+                                            <label for="password" class="col-sm-3 control-label">Contrase&ntilde;a</label>
+                                            <div class="col-sm-7">
+                                                <input name="password" type="password" class="form-control" id="password" placeholder="Ingrese una contrase&ntilde;a" ng-model="user.password" required maxlength="8" ng-pattern="inputLogginPattern" ngTrim="true">
+                                            </div>
+                                        </div>
+                                        <div class="form-group" >
+                                            <div class="col-sm-offset-1 col-sm-10">
+                                                <button type="submit" class="btn btn-danger" ng-disabled="(loginForm.name.$pristine || loginForm.name.$dirty && loginForm.name.$invalid) ||
+                                                            (loginForm.password.$pristine || loginForm.password.$dirty && loginForm.password.$invalid)">Iniciar sesi&oacute;n</button>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- JS -->
+
+        <script type="text/javascript" src="../../plugins/js/jquery-1.11.1.min.js"></script>
+        <script src="../../plugins/js/toastr/toastr.min.js"></script>
+        <script type="text/javascript" src="../../js/all.js"></script>
+
+    </body>
+</html>

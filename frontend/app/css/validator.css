@@ -1,0 +1,42 @@
+span.glyphicon.glyphicon-ok.form-control-feedback, span.glyphicon.glyphicon-remove.form-control-feedback, span.glyphicon.glyphicon-warning-sign.form-control-feedback {
+    display:none;
+}
+
+
+select.ng-pristine.ng-invalid {
+    border:1px solid rgb(138,109,59);;
+}
+select.ng-pristine.ng-invalid ~ span.glyphicon.glyphicon-warning-sign.form-control-feedback {
+    color:rgb(138,109,59);
+    display:inline;
+    margin-right: 10px;
+}
+
+select.ng-dirty.ng-invalid {
+    border:1px solid rgb(138,109,59);;
+}
+select.ng-dirty.ng-invalid ~ span.glyphicon.glyphicon-warning-sign.form-control-feedback {
+    color:rgb(138,109,59);
+    display:inline;
+    margin-right: 10px;
+}
+
+
+input.ng-pristine.ng-invalid {
+    border:1px solid rgb(138,109,59);;
+}
+input.ng-pristine.ng-invalid ~ span.glyphicon.glyphicon-warning-sign.form-control-feedback {
+    color:rgb(138,109,59);
+    display:inline;
+    margin-right: 10px;
+}
+
+input.ng-dirty.ng-invalid {
+    border:1px solid rgb(138,109,59);;
+}
+input.ng-dirty.ng-invalid ~ span.glyphicon.glyphicon-warning-sign.form-control-feedback {
+    color:rgb(138,109,59);
+    display:inline;
+    margin-right: 10px;
+}
+
