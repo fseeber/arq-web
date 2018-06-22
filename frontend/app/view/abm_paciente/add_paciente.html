@@ -31,9 +31,7 @@
 							<div class="col-sm-3">
 								<input type="text" name="historiaClinica" id="historiaClinica"
 									   ng-model="paciente.historiaClinica"
-									   ng-required="true"
-									   ng-pattern="generalPattern"
-									   ng-trim="false">
+									   ng-required="true">
 									<span class="glyphicon glyphicon-warning-sign form-control-feedback"></span>
 							</div>
 						</div>
@@ -43,10 +41,7 @@
 							<label class="col-sm-2 control-label" for="HC">Nombre</label>
 							<div class="col-sm-3">
 								<input type="text" name="nombre" id="nombre"
-									   ng-model="paciente.nombre"
-									   ng-required="true"
-									   ng-pattern="generalPattern"
-									   ng-trim="false">
+									   ng-model="paciente.nombre">
 									<span class="glyphicon glyphicon-warning-sign form-control-feedback"></span>
 							</div>
 						</div>
@@ -56,10 +51,7 @@
 							<label class="col-sm-2 control-label" for="Apellido">Apellido</label>
 							<div class="col-sm-3">
 								<input type="text" name="apellido" id="apellido"
-									   ng-model="paciente.apellido"
-									   ng-required="true"
-									   ng-pattern="generalPattern"
-									   ng-trim="false">
+									   ng-model="paciente.apellido">
 									<span class="glyphicon glyphicon-warning-sign form-control-feedback"></span>
 							</div>
 						</div>
@@ -68,11 +60,8 @@
 						<div class="form-group has-feedback">
 							<label class="col-sm-2 control-label" for="Fecha de Nacimiento">Fecha de Nacimiento</label>
 							<div class="col-sm-3">
-								<input type="text" datetime="yyyy-MM-dd" name="fechaNacimiento" id="fechaNacimiento"
-									   ng-model="paciente.fechaNacimiento"
-									   ng-required="true"
-									   ng-pattern="generalPattern"
-									   ng-trim="false">
+								<input type="text" name="fechaNacimiento" id="fechaNacimiento"
+									   ng-model="paciente.fechaNacimiento">
 									<span class="glyphicon glyphicon-warning-sign form-control-feedback"></span>
 							</div>
 						</div>

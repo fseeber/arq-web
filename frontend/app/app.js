@@ -22,7 +22,7 @@ angular.module('app', ['ngRoute', 'app.services', 'app.directives',
 	$routeProvider.when('/paciente_list', {templateUrl: 'view/abm_paciente/paciente_list.html'});
 	$routeProvider.when('/edit_paciente', {templateUrl: 'view/abm_paciente/add_paciente.html'});
 	$routeProvider.when('/add_pim', {templateUrl: 'view/abm_pim/add_pim.html'});
-	$routeProvider.when('/edit_pim', {templateUrl: 'view/abm_pim/add_pim.html'});
+	$routeProvider.when('/edit_pim/:idPaciente/:idPim', {templateUrl: 'view/abm_pim/add_pim.html'});
 	$routeProvider.when('/pim_list', {templateUrl: 'view/abm_pim/pim_list.html'});
 }])
 

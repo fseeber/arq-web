@@ -26,14 +26,22 @@ angular.module('app.add_paciente', ['ngRoute'])
 	}
 	console.log($scope);
 	
-	$scope.generalPattern = /^[a-zA-Z0-9-_]{3,254}$/i;
-	
 	$scope.save = function(){
-            PacienteService.add($scope.paciente)
-			.success(function () {
-				$scope.paciente = {};
-				toastr.warning("El paciente fue ingresado con éxito", null, Utils.opts);
-			});
+			console.log($scope);
+			if ($scope.pacienteId != undefined){
+				PacienteService.update($scope.pacienteId, $scope.paciente)
+				.success(function () {
+					$scope.paciente = {};
+					toastr.warning("El paciente fue actualizado con éxito", null, Utils.opts);
+				});
+			}else{
+				PacienteService.add($scope.paciente)
+				.success(function () {
+					$scope.paciente = {};
+					toastr.warning("El paciente fue ingresado con éxito", null, Utils.opts);
+				});
+			}
+			
 	};
 	
 	$scope.back = function(){

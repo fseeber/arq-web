@@ -11,37 +11,78 @@ angular.module('app.add_pim', ['ngRoute'])
 	                                   function($scope, $routeParams, $http, $window, $location, Utils, PimService, PacienteService) {
 	
 	$scope.pimId = null;
+	$scope.pacienteId = null;
 	$scope.pim = {};
-	
-	$scope.save = function(){
+	$scope.pimId = $routeParams.idPim;
+	$scope.pacienteId = $routeParams.idPaciente;
+	console.log($routeParams);
+	if($routeParams.idPim != undefined){
 
-		PimService.add($scope.pacienteId, $scope.paciente.pim)
-		.success(function () {
-			$scope.pim = {};
-			toastr.warning("El pim fue ingresado con éxito", null, Utils.opts);
+		PimService.findById($scope.pacienteId, $scope.pimId)
+		.success(function (data) {
+			console.log(data);
+			/*
+			"diagnosticoMuyAltoRiesgo": 2,
+            "diagnosticoAltoRiesgo": 2,
+            "diagnosticoBajoRiesgo": 2,
+            "presionSistolica": 2,
+            "excesoDeBaseEnSangre": 2,
+            "fiO2": 2,
+            "paO2": 2,
+            "adminisionElectivaUci": 2,
+            "midriasisBilateral": 2,
+            "asistenciaRespiracionMecanica": 2,
+            "recuperacionByPassCardiaco": 2,
+            "recuperacionProcCardSinByPassCardiaco": 2,
+            "recuperacionOtroProcedimientoNoCardiaco": 2,
+            "txHIV": 2,
+            "HIV": 2,
+			"transplateHepaticoDeDonanteVivo": 2,
+			*/
+			$scope.pim.diagnosticoMuyAltoRiesgo = data.pims.diagnosticoMuyAltoRiesgo;
+			$scope.pim.diagnosticoAltoRiesgo = data.pims.diagnosticoAltoRiesgo;
+			$scope.pim.diagnosticoBajoRiesgo = data.pims.diagnosticoBajoRiesgo;
+			$scope.pim.presionSistolica = data.pims.presionSistolica;
+			$scope.pim.excesoDeBaseEnSangre = data.pims.excesoDeBaseEnSangre;
+			$scope.pim.fiO2 = data.pims.fiO2;
+			$scope.pim.paO2 = data.pims.paO2;
+			$scope.pim.adminisionElectivaUci = data.pims.adminisionElectivaUci;
+			$scope.pim.midriasisBilateral = data.pims.midriasisBilateral;
+			$scope.pim.recuperacionPostQX = data.pims.recuperacionPostQX;
+			$scope.pim.asistenciaRespiracionMecanica = data.pims.asistenciaRespiracionMecanica;
+			$scope.pim.recuperacionByPassCardiaco = data.pims.recuperacionByPassCardiaco;
+			$scope.pim.recuperacionProcCardSinByPassCardiaco = data.pims.recuperacionProcCardSinByPassCardiaco;
+			$scope.pim.recuperacionOtroProcedimientoNoCardiaco = data.pims.recuperacionOtroProcedimientoNoCardiaco;
+			$scope.pim.txHIV = data.pims.txHIV;
+			$scope.pim.HIV = data.pims.HIV;
+			$scope.pim.transplateHepaticoDeDonanteVivo = data.pims.transplateHepaticoDeDonanteVivo;
 		});
-	};
-
-	if($routeParams.id != undefined){
-	   $scope.pacienteId = $routeParams.id;
-	   PimService.findById($scope.pacienteId)
-		   .success(function (data) {
-			   $scope.paciente = data[0];
-		   })
 	}
-	
+
+	$scope.save = function(){
+		$scope.pacienteId = $routeParams.idPaciente;
+		$scope.pimId = $routeParams.idPim;
+		console.log($scope);
+		if ($scope.pimId != undefined){
+			PimService.update($scope.pacienteId, $scope.pimId, $scope.pim)
+			.success(function () {
+				$scope.pim = {};
+				toastr.warning("El pim fue actualizado con éxito", null, Utils.opts);
+				$location.path('/paciente_list');
+			});
+		}else{
+			$scope.pacienteId = $routeParams.id;
+			PimService.add($scope.pacienteId, $scope.pim)
+			.success(function () {
+				$scope.pim = {};
+				toastr.warning("El pim fue ingresado con éxito", null, Utils.opts);
+				$location.path('/paciente_list');
+			});
+		}
+
+	};
 	
 	$scope.generalPattern = /^[a-zA-Z0-9-_]{3,254}$/i;
-	
-	
-	
-	$scope.deletePaciente = function(id){
-		PimService.delete(id)
-		.success(function () {
-			$location.path('/paciente_list');
-			toastr.warning("El paciente fue eliminado con éxito", null, Utils.opts);
-		});
-	}
 
 	$scope.back = function(){
 		$location.path('/paciente_list');

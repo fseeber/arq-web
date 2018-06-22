@@ -7,20 +7,20 @@ angular.module('app.pim_service', [])
         return $http.get(Utils.serviceHost+'/api/pims/');
     };
 
-    PimService.findById = function (id) {
-        return $http.get(Utils.serviceHost+'/api/pacientes/'+id);
+    PimService.findById = function (idPaciente, idPim) {
+        return $http.get(Utils.serviceHost+'/api/pacientes/'+idPaciente+'/pims/'+idPim);
     };
     
-    PimService.add = function (id, params) {
-        return $http.post(Utils.serviceHost+'/api/pacientes/'+id+'/pims/', params);
+    PimService.add = function (idPaciente, params) {
+        return $http.post(Utils.serviceHost+'/api/pacientes/'+idPaciente+'/pims/', params);
     };
     
-    PimService.update = function (id, params) {
-        return $http.put(Utils.serviceHost+'/api/pacientes/'+id, params);
+    PimService.update = function (idPaciente, idPim, params) {
+        return $http.put(Utils.serviceHost+'/api/pacientes/'+idPaciente+'/pims/'+idPim, params);
     };
     
-    PimService.delete = function (id) {
-        return $http.delete(Utils.serviceHost+'/api/pacientes/'+id);
+    PimService.delete = function (idPaciente, idPim) {
+        return $http.delete(Utils.serviceHost+'/api/pacientes/'+idPaciente+'/pims/'+idPim);
     };
     
     return PimService;

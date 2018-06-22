@@ -25,7 +25,7 @@
 								<h3 class="panel-title">JSON a enviar..: {{pacientes}}</h3>
 							</div>-->
 							<label class="col-sm-2 control-label" for="id">Id Paciente</label>
-							<div class="col-sm-3">
+							<div class="col-sm-4">
 								<input type="text" class="form-control" id="_id" ng-model="paciente._id" name="id" >
 								<span class="glyphicon glyphicon-warning-sign form-control-feedback"></span>
 							</div>
@@ -102,7 +102,7 @@
 							<tr>
 								<th>Id PIM</th>
 								<th>Id Paciente</th>
-								<th>Pim</th>
+								<th>Score PIM</th>
 								<th></th>
 								<th></th>
 							</tr>
@@ -113,10 +113,10 @@
 									<td>{{pim.paciente}}</td>
 									<td>{{pim.pim | number:2}}</td>
 									<td style="text-align: center;">
-										<a class="btn btn-secondary btn-sm btn-icon" ng-href="#/edit_pim/{{pim.paciente}}">Editar</a>
+										<a class="btn btn-secondary btn-sm btn-icon" ng-href="#/edit_pim/{{pim.paciente}}/{{pim._id}}">Editar</a>
 									</td>
 									<td style="text-align: center;">
-										<a class="btn btn-danger btn-sm btn-icon" ng-click="deletePim(pim.paciente)">Borrar</a>
+										<a class="btn btn-danger btn-sm btn-icon" ng-click="deletePim(pim.paciente, pim._id)">Borrar</a>
 									</td>
 								</tr>
 							</tbody>

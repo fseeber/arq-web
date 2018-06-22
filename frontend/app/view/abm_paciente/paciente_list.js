@@ -35,6 +35,16 @@ angular.module('app.paciente_list', ['ngRoute'])
 		$scope.init();
 	}
 
+	$scope.deletePim = function(idPaciente, idPim){
+		PimService.delete(idPaciente, idPim)
+		.success(function () {
+			$location.path('/paciente_list');
+			toastr.warning("El pim fue eliminado con éxito", null, Utils.opts);
+		});
+		$scope.init();
+		$scope.init2();
+	}
+
 	$scope.clear = function(){
 		$scope.paciente._id=''; 
 		$scope.pacientes;
